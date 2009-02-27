@@ -1,0 +1,50 @@
+NAME
+    Finance::Wesabe - Access your wesabe.com account information
+
+SYNOPSIS
+        my $w = Finance::Wesabe->new( {
+            username => $u,
+            password => $p,
+        } );
+        
+    printf "%s: %s\n", $_->name, $_->pretty_balance for $w->accounts;
+
+DESCRIPTION
+        Wesabe is part money management tool, part community.
+
+    This module provides access to your basic account info via the wesabe
+    API. It currently supports a subset of the 1.0.0 API.
+
+ACCESSORS
+    *   agent - A useragent for all requests
+
+    *   url - Base URI for all requests
+
+    *   username - your wesabe.com username
+
+    *   password - your wesabe.com password
+
+METHODS
+  accounts( )
+    Returns Finance::Wesabe::Account objects for each of your accounts.
+
+  account( $index )
+    Returns a Finance::Wesabe::Account object for the given <$index>.
+
+    NB: Accounts have no specific numeric id, so 1 means the first account,
+    and so on.
+
+SEE ALSO
+    *   <http://www.wesabe.com>
+
+    *   <https://www.wesabe.com/page/api>
+
+AUTHOR
+    Brian Cassidy <bricas@cpan.org>
+
+COPYRIGHT AND LICENSE
+    Copyright 2009 by Brian Cassidy
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
