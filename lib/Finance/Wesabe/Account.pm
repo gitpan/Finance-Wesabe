@@ -45,17 +45,17 @@ has parent => ( is => 'ro', isa => 'Object' );
 
 =item * guid
 
-=item * txaction-count
+=item * txaction_count
 
-=item * account-type
+=item * account_type
 
-=item * account-number
+=item * account_number
 
-=item * newest-txaction - A DateTime object
+=item * newest_txaction - A DateTime object
 
-=item * oldest-txaction - A DateTime object
+=item * oldest_txaction - A DateTime object
 
-=item * last-uploaded-at - A DateTime object
+=item * last_uploaded_at - A DateTime object
 
 =item * balance
 
@@ -124,7 +124,7 @@ Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2009 by Brian Cassidy
+Copyright 2009-2010 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

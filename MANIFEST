@@ -10,6 +10,7 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Finance/Wesabe.pm
 lib/Finance/Wesabe/Account.pm
+lib/Finance/Wesabe/Profile.pm
 lib/Finance/Wesabe/Transaction.pm
 lib/Finance/Wesabe/Utils.pm
 Makefile.PL

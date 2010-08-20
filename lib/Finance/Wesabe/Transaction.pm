@@ -37,25 +37,27 @@ has parent => ( is => 'ro', isa => 'Object' );
 
 =over 4
 
-=item * raw-name
+=item * raw_name
 
 =item * guid
 
 =item * memo
 
-=item * raw-txntype
+=item * note
+
+=item * raw_txntype
 
 =item * amount
 
 =item * date - A DateTime object
 
-=item * original-date - A DateTime object
+=item * original_date - A DateTime object
 
 =back
 
 =cut
 
-__PACKAGE__->mk_simple_field( qw( memo raw-name guid raw-txntype ) );
+__PACKAGE__->mk_simple_field( qw( memo raw-name guid raw-txntype note ) );
 __PACKAGE__->mk_deep_field( qw( amount ) );
 __PACKAGE__->mk_simple_date_field( qw( date original-date ) );
 
@@ -87,6 +89,16 @@ sub tags {
     return map { $_->{ name } } @$tags;
 }
 
+=head2 is_transfer( )
+
+Returns a boolean indicating if this transaction is a transfer.
+
+=cut
+
+sub is_transfer {
+    return exists shift->content->{ transfer };
+}
+
 no Moose;
 
 __PACKAGE__->meta->make_immutable;
@@ -97,7 +109,7 @@ Brian Cassidy E<lt>bricas@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2009 by Brian Cassidy
+Copyright 2009-2010 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
